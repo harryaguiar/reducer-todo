@@ -1,17 +1,17 @@
 import React, {useReducer} from "react";
 import TodoItem from "./TodoItem";
-import {addItem, clearCompleted, toggleItem, reducer, initialState} from "../reducers/reducer";
+import {reducer, initialState} from "../reducers/reducer";
 
 function TodoList (props) {
     //console.log(props);
+    
     const [state, dispatch] = useReducer(reducer, initialState);
+    console.log(state);
+
 return(
     <div className="todo-list">
 {state.todoList.map((item) => (
-    <div>
-        <p>{item.item}</p>
-    </div>
-    // <TodoItem key={item.id} item={item} toggleItem={props.toggleItem}/>
+    <TodoItem key={item.id} item={props.newItem}/>
 ))}
     </div>
 )

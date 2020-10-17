@@ -6,7 +6,7 @@ export const initialState = {
     todoList: [{
         item: 'Learn about reducers',
         completed: false,
-        id: Date.now()
+        id: new Date()
       }]
 }
 export const reducer = (state, action) => {
@@ -22,10 +22,15 @@ switch(action.type){
     case clearCompleted:
         return{
             ...state,
-            todoList: [{...state.todoList,
-            completed: !state.todoList.completed
+            todoList: [
+            {completed: !state.todoList.completed
             }]
-        }    
+        } 
+    case toggleItem:
+        return{
+            ...state,
+            todoList.completed: 
+            }
     default:
         return state
 }

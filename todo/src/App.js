@@ -1,7 +1,7 @@
 import React from 'react';
 import {data} from "./data";
 import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+// import TodoList from "./components/TodoList";
 import './App.css';
 
 class App extends React.Component {
@@ -14,20 +14,20 @@ class App extends React.Component {
 }
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
-addItem = (itemTask) => {
-  const newItem = {
-    task: itemTask,
-    id: Date.now(),
-    completed: false
-  };
-  this.setState({
-    ...this.state,
-    data: [...this.state.data, newItem]
-  });
+// addItem = (itemTask) => {
+//   const newItem = {
+//     task: itemTask,
+//     id: Date.now(),
+//     completed: false
+//   };
+//   this.setState({
+//     ...this.state,
+//     data: [...this.state.data, newItem]
+//   });
   
    
   
-};
+
 clearCompleted = (e) => {
   e.preventDefault();
   this.setState({
@@ -61,7 +61,7 @@ toggleItem = (itemId) => {
         <p>Redux Reducer Todo App</p>
       </header>
       </div>
-      <TodoList data={this.state.data} toggleItem={this.toggleItem}/>
+      {/* <TodoList data={this.state.data} toggleItem={this.toggleItem}/> */}
       <TodoForm addItem={this.addItem} clearCompleted={this.clearCompleted}/>
       </>
     );
