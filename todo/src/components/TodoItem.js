@@ -1,25 +1,12 @@
-import React, {useReducer} from "react";
-import {toggleItem, reducer, initialState} from "../reducers/reducer";
-
+import React from "react";
 
 function TodoItem (props) {
-    console.log(props);
-
-    const [state, dispatch] = useReducer(reducer, initialState);
-    //console.log(state);
-    
-   const toggling = (itemId) => {
-       state.todoList.map((item) => {
-           if(itemId === item.id){
-               dispatch({type: toggleItem});
-           }
-       })
-   }
+    //console.log(props);
 
 return(
-    <div onClick={() => toggling(state.todoList.id)}
-    className={`item${state.todoList.completed ? "completed" : ""}`}>
-        <p>{props.item}</p>
+    <div onClick={() => props.toggleTodo(props.item.id)}
+    className={`item${props.item.completed ? "completed" : ""}`}>
+        <p>{props.item.item}</p>
     </div>
 )
 }
