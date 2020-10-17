@@ -56,9 +56,10 @@ toggleItem = (itemId) => {
   render() {
     return (
       <>
-      <div className="header">
-        <h1>React To-Do App</h1>
-        <p>Keep Yourself Organized</p>
+      <div className="App">
+      <header className="header">
+        <p>Redux Reducer Todo App</p>
+      </header>
       </div>
       <TodoList data={this.state.data} toggleItem={this.toggleItem}/>
       <TodoForm addItem={this.addItem} clearCompleted={this.clearCompleted}/>
