@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>ToDo List [ <span style={{color: '#61dafb', margin: '0px', padding: '0px'}}>{ todoCount }</span> ]</div>
+        <div>ToDo List - Tasks: <span style={{color: '#61dafb', margin: '0px', padding: '0px'}}>{ todoCount }</span></div>
         <div>
           { todos.map((todo, index) => (
               <div 
